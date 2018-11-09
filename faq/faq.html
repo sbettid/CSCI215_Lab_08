@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <title>A One Page Faq</title>
-<link href="../_css/site.css" rel="stylesheet">
-<script src="../_js/jquery.min.js"></script>
+<link href="site.css" rel="stylesheet">
+<script src="jquery.min.js"></script>
 <style type="text/css">
 h2 {
-	background: url(../_images/open.png) no-repeat 0 11px;
+	background: url(open.png) no-repeat 0 11px;
 	padding: 10px 0 0 25px;
 	cursor: pointer;
 }
 h2.close {
-	background-image: url(../_images/close.png);
+	background-image: url(close.png);
 }
 .answer {
 	margin-left: 25px;	
@@ -20,6 +20,21 @@ h2.close {
 </style>
 <script>
 $(document).ready(function() {
+    //Lab code starts here
+    $('.answer').hide(); //hide all answers
+
+    $('.main h2').click(function () { //for every h2 in the main div we have a click handler
+
+        var $answer = $(this).next('.answer'); //take the h2 corresponding answer
+
+        if($answer.is(':hidden')){ //if it is hidden (using css selector)
+            $answer.slideDown(); //show it
+            $(this).addClass('close'); //add the close sign
+        } else {  //otherwise
+            $answer.slideUp();  //close it
+            $(this).removeClass('close'); //remove the minus sign
+        }
+    });
 
 }); // end ready
 </script>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>A Slide In Dashboard</title>
-<link href="../_css/site.css" rel="stylesheet">
+<link href="../effect/site.css" rel="stylesheet">
 <style>
 #dashboard {
 	width: 110px;
@@ -18,11 +18,23 @@
 	border: 1px solid rgb(0,0,0);
 }
 </style>
-<script src="../_js/jquery.min.js"></script>
+<script src="jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
 
 <script>
 $(document).ready(function() {
- 
+    //Lab code starts here
+    $('#dashboard').hover(function () { //when we enter
+        $(this).stop().animate({
+            left: '0',
+            backgroundColor: 'rgb(27,45,94)'
+        }, 500, 'easeInSine');
+    }, function () { //when we leave
+        $(this).stop().animate({
+            left: '-92px',
+            backgroundColor: 'rgb(255,211,224)'
+        }, 1500, 'easeOutBounce');
+    });
 }); // end ready
 </script>
 </head>
@@ -32,12 +44,12 @@ $(document).ready(function() {
     JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
   </header>
 <div id="dashboard">
-<img src="../_images/small/blue_h.jpg" width="70" height="70" alt="blue">
-<img src="../_images/small/green_h.jpg" width="70" height="70" alt="green">
-<img src="../_images/small/orange_h.jpg" width="70" height="70" alt="orange">
-<img src="../_images/small/purple_h.jpg" width="70" height="70" alt="purple">
-<img src="../_images/small/red_h.jpg" width="70" height="70" alt="red">
-<img src="../_images/small/yellow_h.jpg" width="70" height="70" alt="yellow">
+<img src="blue_h.jpg" width="70" height="70" alt="blue">
+<img src="green_h.jpg" width="70" height="70" alt="green">
+<img src="orange_h.jpg" width="70" height="70" alt="orange">
+<img src="purple_h.jpg" width="70" height="70" alt="purple">
+<img src="red_h.jpg" width="70" height="70" alt="red">
+<img src="yellow_h.jpg" width="70" height="70" alt="yellow">
 </div>
 <div class="content">
 <div class="main">

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Slide in Login Screen</title>
-<link href="../_css/site.css" rel="stylesheet">
+<link href="site.css" rel="stylesheet">
 <style>
 #login {
 	width: 300px;
@@ -22,7 +22,7 @@
 #open {
 	margin: 0;
 	cursor: pointer;
-	background-image:  url(../_images/open.png);
+	background-image:  url(../faq/open.png);
 	background-repeat: no-repeat;
 	background-position:  8px 7px;
 	color: white;
@@ -31,7 +31,7 @@
 }
 
 #login .close {
-	background-image: url(../_images/close.png);
+	background-image: url(../faq/close.png);
 }
 
 #open:hover {
@@ -61,10 +61,16 @@
 	padding-right: 15px;
 }
 </style>
-<script src="../_js/jquery.min.js"></script>
+<script src="jquery.min.js"></script>
 <script>
 $(document).ready(function() {
+	//Lab code starts here
+	$('#open').click(function (evt) {
+		evt.preventDefault(); //Don't follow the link, it is going to appear
+		$('#login form').slideToggle(300); //show it
+		$(this).toggleClass('close'); //add minus class
 
+    });
 }); // end ready
 </script>
 </head>
